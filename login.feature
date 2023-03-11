@@ -15,27 +15,14 @@
             E a senha "senha@123"
             Então deve redirecionar para a tela de checkout
 
-            Cenário: Senha inválida
-
-            Quando eu digitar o usuário "joao@ebac.com.br"
-            E a senha "123456"
-            Então deve aparecer uma mensagem de alerta "Senha inválida"
-
-            Cenário: Usuário inexistente
-
-            Quando eu digitar o usuário "xxxyyyzzz@ebac.com.br"
-            E a senha "senha@123"
-            Então deve aparecer uma mensagem de alerta "Usuário inexistente"
-
-            Esquema do Cenário: Autenticar múltiplos usuários
+            Esquema do Cenário: Erro de login
 
             Quando eu digitar o <usuario>
             E a <senha>
-            Então deve deve redirecionar para a tela de checkout
+            Então deve aparecer uma mensagem de alerta <mensagem>
 
             Exemplos:
-            | usuario             | senha       |
-            | "joao@ebac.com.br"  | "senha@123" |
-            | "maria@ebac.com.br" | "senha@123" |
-            | "jose@ebac.com.br"  | "senha@123" |
+            | usuario                 | senha       | mensagem              |
+            | "joao@ebac.com.br"      | "123456"    | "Senha inválida"      |
+            | "xxxyyyzzz@ebac.com.br" | "senha@123" | "Usuário inexistente" |
 
